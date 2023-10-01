@@ -17,7 +17,7 @@ namespace RPG.Character
                 return;
             }
 
-            Debug.Log("Attacking player");
+            enemy.CombatComponent.StartAttack();
         }
     }
 }

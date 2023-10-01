@@ -7,7 +7,7 @@ namespace RPG.Character
     public class EnemyController : MonoBehaviour
     {
         private Health healthComponent;
-        private Combat combatComponent;
+        public Combat CombatComponent { get; set; }
 
         [field: SerializeField] public CharacterStatsSO Stats { get; set; }
         [SerializeField] private float chaseRange = 2.5f;
@@ -42,7 +42,7 @@ namespace RPG.Character
             MovementComponent = GetComponent<Movement>();
             PatrolComponent = GetComponent<Patrol>();
             healthComponent = GetComponent<Health>();
-            combatComponent = GetComponent<Combat>();
+            CombatComponent = GetComponent<Combat>();
 
             OriginalPosition = transform.position;
         }
@@ -52,7 +52,7 @@ namespace RPG.Character
             currentState.EnterState(this);
 
             healthComponent.HealthPoints = Stats.Health;
-            combatComponent.Damage = Stats.Damage;
+            CombatComponent.Damage = Stats.Damage;
         }
 
         private void Update()

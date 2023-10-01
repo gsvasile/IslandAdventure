@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using RPG.Utility;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -54,7 +53,7 @@ namespace RPG.Character
             StartAttack();
         }
 
-        private void StartAttack()
+        public void StartAttack()
         {
             if (IsAttacking)
             {
@@ -99,7 +98,7 @@ namespace RPG.Character
                     continue;
                 }
 
-                print(target.transform.name);
+                healthComponent.TakeDamage(Damage);
             }
         }
     }
