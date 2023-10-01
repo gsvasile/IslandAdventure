@@ -1,20 +1,39 @@
-using System;
 using RPG.Utility;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Character
 {
     public class Health : MonoBehaviour
     {
+        public event UnityAction OnStartDefeated;
+
         private Animator animatorComponent;
+        private BubbleEvent bubbleEventComponent;
+
         private bool isDefeated = false;
 
         public float HealthPoints { get; set; } = 0f;
 
-
         private void Awake()
         {
             animatorComponent = GetComponentInChildren<Animator>();
+            bubbleEventComponent = GetComponentInChildren<BubbleEvent>();
+        }
+
+        private void OnEnable()
+        {
+            RegisterEvents();
+        }
+
+        private void RegisterEvents()
+        {
+            bubbleEventComponent.OnBubbleCompleteDefeat += HandleBubbleCompleteDefeat;
+        }
+
+        private void OnDisable()
+        {
+            bubbleEventComponent.OnBubbleCompleteDefeat -= HandleBubbleCompleteDefeat;
         }
 
         public void TakeDamage(float damageAmount)
@@ -34,8 +53,18 @@ namespace RPG.Character
                 return;
             }
 
+            if (CompareTag(Constants.ENEMY_TAG))
+            {
+                OnStartDefeated?.Invoke();
+            }
+
             animatorComponent.SetTrigger(Constants.ANIMATOR_PARAMETER_DEFEATED);
             isDefeated = true;
+        }
+
+        private void HandleBubbleCompleteDefeat()
+        {
+            Destroy(gameObject);
         }
     }
 }

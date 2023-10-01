@@ -763,7 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7069361936030828597}
   - component: {fileID: 3817724193646367311}
-  - component: {fileID: 8212155010830016331}
+  - component: {fileID: 553810295888152335}
   m_Layer: 0
   m_Name: KayKit Animated Character_v1.2
   m_TagString: Untagged
@@ -808,7 +808,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8212155010830016331
+--- !u!114 &553810295888152335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

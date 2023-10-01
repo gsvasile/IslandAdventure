@@ -19,6 +19,7 @@ namespace RPG.Character
         public AIChaseState ChaseState => new AIChaseState();
         public AIAttackState AttackState => new AIAttackState();
         public AIPatrolState PatrolState => new AIPatrolState();
+        public AIDefeatedState DefeatedState => new AIDefeatedState();
 
         public float DistanceFromPlayer { get; private set; }
         public Vector3 OriginalPosition { get; private set; }
@@ -55,6 +56,16 @@ namespace RPG.Character
             CombatComponent.Damage = Stats.Damage;
         }
 
+        private void OnEnable()
+        {
+            healthComponent.OnStartDefeated += HandleStartDefeated;
+        }
+
+        private void OnDisable()
+        {
+            healthComponent.OnStartDefeated -= HandleStartDefeated;
+        }
+
         private void Update()
         {
             CalculateDistanceFromPlayer();
@@ -85,6 +96,12 @@ namespace RPG.Character
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position,
                                   chaseRange);
+        }
+
+        private void HandleStartDefeated()
+        {
+            SwitchState(DefeatedState);
+            currentState.EnterState(this);
         }
     }
 }

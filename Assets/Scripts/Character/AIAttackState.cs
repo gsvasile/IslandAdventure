@@ -11,6 +11,12 @@ namespace RPG.Character
 
         public override void UpdateState(EnemyController enemy)
         {
+            if (enemy.Player == null)
+            {
+                enemy.CombatComponent.CancelAttack();
+                return;
+            }
+
             if (enemy.DistanceFromPlayer > enemy.AttackRange)
             {
                 enemy.CombatComponent.CancelAttack();
