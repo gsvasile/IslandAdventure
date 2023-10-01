@@ -101,5 +101,10 @@ namespace RPG.Character
                 healthComponent.TakeDamage(Damage);
             }
         }
+
+        public void CancelAttack()
+        {
+            animatorComponent.ResetTrigger(Constants.ANIMATOR_PARAMETER_ATTACK);
+        }
     }
 }

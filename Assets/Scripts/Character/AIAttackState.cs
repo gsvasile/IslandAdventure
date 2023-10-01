@@ -13,11 +13,13 @@ namespace RPG.Character
         {
             if (enemy.DistanceFromPlayer > enemy.AttackRange)
             {
+                enemy.CombatComponent.CancelAttack();
                 enemy.SwitchState(enemy.ChaseState);
                 return;
             }
 
             enemy.CombatComponent.StartAttack();
+            enemy.transform.LookAt(enemy.Player.transform);
         }
     }
 }

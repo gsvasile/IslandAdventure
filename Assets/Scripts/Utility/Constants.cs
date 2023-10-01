@@ -7,5 +7,6 @@ namespace RPG.Utility
         public const string ANIMATOR_PARAMETER_IS_SHAKING = "isShaking";
         public const string ENEMY_TAG = "Enemy";
         public const string ANIMATOR_PARAMETER_ATTACK = "attack";
+        public const string ANIMATOR_PARAMETER_DEFEATED = "defeated";
     }
 }
