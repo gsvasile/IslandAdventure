@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GlobalStylesheet.uss?fileID=7433441132597879392&amp;guid=1a4906379c2b31f49897b8ec4396e800&amp;type=3#GlobalStylesheet" />
+    <ui:VisualElement name="main-menu-container" class="center">
+        <ui:VisualElement name="box" class="primary-container">
+            <ui:Label tabindex="-1" text="The Great Tiny Island Adventure" parse-escape-sequences="true" display-tooltip-when-elided="true" class="root-text" style="font-size: 80px; -unity-text-align: upper-center;" />
+            <ui:VisualElement name="buttons" style="flex-grow: 1; position: absolute; left: 0; bottom: -50px; width: 100%; flex-direction: row; justify-content: center;">
+                <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="start-button" class="menu-button" style="position: relative; top: 0; left: 0; background-color: rgb(41, 153, 201); margin-right: 0; margin-left: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Game%20Assets/Sprites/Bombs.png?fileID=2800000&amp;guid=4420e8d6e00706f4f84dad51b2169cb1&amp;type=3#Bombs&apos;); width: 332px; height: 174px; position: absolute; top: -150px; left: 280px;" />
+            <ui:VisualElement style="flex-grow: 1; width: 20px; height: 40px; background-image: url(&apos;project://database/Assets/Game%20Assets/Sprites/RosieSeesThroughToy.png?fileID=2800000&amp;guid=6717eef85019092419a96a00e46fe87e&amp;type=3#RosieSeesThroughToy&apos;); position: absolute; left: 321px; top: -60px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
