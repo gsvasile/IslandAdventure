@@ -16,11 +16,15 @@ namespace RPG.UI
             Controller.Buttons = Controller.Root
                 .Query<Button>(null, Constants.CLASS_MENU_BUTTON)
                 .ToList();
+
+            Controller.Buttons[0].AddToClassList(Constants.CLASS_MENU_ACTIVE);
         }
 
         public override void SelectButton()
         {
-            Debug.Log("Interaction Detected.");
+            Button button = Controller.Buttons[Controller.CurrentSelection];
+
+            Debug.Log(button.name);
         }
     }
 }

@@ -37,11 +37,41 @@
 }
 
 .menu-button {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgb(41, 153, 201);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 1px;
+    margin-right: 3px;
+    margin-bottom: 1px;
+    margin-left: 3px;
     width: 325px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    -unity-font-definition: initial;
     -unity-font: url('project://database/Assets/Game%20Assets/Fonts/OdibeeSans-Regular.ttf?fileID=12800000&guid=94c91e133c0f88c438ef55128a1cd703&type=3#OdibeeSans-Regular');
+    -unity-font-definition: initial;
     font-size: 32px;
     color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-right: 6px;
+    padding-bottom: 20px;
+    padding-left: 6px;
+}
+
+.active {
+    background-color: rgb(169, 206, 48);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
 }

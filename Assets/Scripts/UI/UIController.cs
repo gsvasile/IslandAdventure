@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using RPG.Utility;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 namespace RPG.UI
@@ -12,6 +14,8 @@ namespace RPG.UI
 
         public UIBaseState CurrentState { get; set; }
         public UIMainMenuState MainMenuState { get; private set; }
+
+        public int CurrentSelection { get; set; }
 
         private void Awake()
         {
@@ -28,9 +32,32 @@ namespace RPG.UI
             CurrentState.EnterState();
         }
 
-        public void HandleInteract()
+        public void HandleInteract(InputAction.CallbackContext context)
         {
+            if (!context.performed)
+            {
+                return;
+            }
+
             CurrentState.SelectButton();
+        }
+
+        public void HandleNavigate(InputAction.CallbackContext context)
+        {
+            if (!context.performed || Buttons.Count == 0)
+            {
+                return;
+            }
+
+            Buttons[CurrentSelection].RemoveFromClassList(Constants.CLASS_MENU_ACTIVE);
+
+            Vector2 input = context.ReadValue<Vector2>();
+
+            CurrentSelection += input.x < 0 ? -1 : 1;
+            CurrentSelection = Mathf.Clamp(CurrentSelection, 0, Buttons.Count - 1);
+
+            Buttons[CurrentSelection].AddToClassList(Constants.CLASS_MENU_ACTIVE);
+
         }
     }
 }
