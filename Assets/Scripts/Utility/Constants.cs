@@ -13,6 +13,8 @@ namespace RPG.Utility
         public const string CLASS_MENU_BUTTON = "menu-button";
         public const string CLASS_MENU_ACTIVE = "active";
         public const string MENU_START_BUTTON_NAME = "start-button";
+        public const string CLASS_MAIN_MENU_CONTAINER = "main-menu-container";
+        public const string CLASS_PLAYER_INFO_CONTAINER = "player-info-container";
         #endregion UI
     }
 }

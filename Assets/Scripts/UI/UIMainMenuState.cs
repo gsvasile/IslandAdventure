@@ -13,7 +13,9 @@ namespace RPG.UI
 
         public override void EnterState()
         {
-            Controller.Buttons = Controller.Root
+            Controller.MainMenuContainer.style.display = DisplayStyle.Flex;
+
+            Controller.Buttons = Controller.MainMenuContainer
                 .Query<Button>(null, Constants.CLASS_MENU_BUTTON)
                 .ToList();
 

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using RPG.Utility;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace RPG.UI
@@ -11,6 +12,8 @@ namespace RPG.UI
         private UIDocument uiDocumentComponent;
         public VisualElement Root { get; private set; }
         public List<Button> Buttons { get; set; }
+        public VisualElement MainMenuContainer { get; private set; }
+        public VisualElement PlayerInfoContainer { get; private set; }
 
         public UIBaseState CurrentState { get; set; }
         public UIMainMenuState MainMenuState { get; private set; }
@@ -19,17 +22,30 @@ namespace RPG.UI
 
         private void Awake()
         {
-            MainMenuState = new UIMainMenuState(this);
-
             uiDocumentComponent = GetComponent<UIDocument>();
             Root = uiDocumentComponent.rootVisualElement;
+
+            MainMenuContainer = Root.Q<VisualElement>(Constants.CLASS_MAIN_MENU_CONTAINER);
+            PlayerInfoContainer = Root.Q<VisualElement>(Constants.CLASS_PLAYER_INFO_CONTAINER);
+
+            MainMenuState = new UIMainMenuState(this);
         }
 
         // Start is called before the first frame update
         private void Start()
         {
-            CurrentState = MainMenuState;
-            CurrentState.EnterState();
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            if (sceneIndex == 0)
+            {
+                CurrentState = MainMenuState;
+                CurrentState.EnterState();
+            }
+            else
+            {
+                PlayerInfoContainer.style.display = DisplayStyle.Flex;
+            }
+
         }
 
         public void HandleInteract(InputAction.CallbackContext context)
