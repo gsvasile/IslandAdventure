@@ -1,5 +1,5 @@
+using RPG.Core;
 using RPG.Utility;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace RPG.UI
@@ -24,7 +24,10 @@ namespace RPG.UI
         {
             Button button = Controller.Buttons[Controller.CurrentSelection];
 
-            Debug.Log(button.name);
+            if (button.name == Constants.MENU_START_BUTTON_NAME)
+            {
+                SceneTransition.Initiate(1);
+            }
         }
     }
 }
