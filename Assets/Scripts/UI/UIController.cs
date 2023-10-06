@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RPG.Core;
 using RPG.Utility;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +15,7 @@ namespace RPG.UI
         public List<Button> Buttons { get; set; }
         public VisualElement MainMenuContainer { get; private set; }
         public VisualElement PlayerInfoContainer { get; private set; }
+        public Label HealthLabel { get; private set; }
 
         public UIBaseState CurrentState { get; set; }
         public UIMainMenuState MainMenuState { get; private set; }
@@ -27,8 +29,14 @@ namespace RPG.UI
 
             MainMenuContainer = Root.Q<VisualElement>(Constants.CLASS_MAIN_MENU_CONTAINER);
             PlayerInfoContainer = Root.Q<VisualElement>(Constants.CLASS_PLAYER_INFO_CONTAINER);
+            HealthLabel = PlayerInfoContainer.Q<Label>(Constants.LABEL_HEALTH_NAME);
 
             MainMenuState = new UIMainMenuState(this);
+        }
+
+        private void OnEnable()
+        {
+            EventManager.OnChangePlayerHealth += HandleChangePlayerHealth;
         }
 
         // Start is called before the first frame update
@@ -46,6 +54,11 @@ namespace RPG.UI
                 PlayerInfoContainer.style.display = DisplayStyle.Flex;
             }
 
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnChangePlayerHealth -= HandleChangePlayerHealth;
         }
 
         public void HandleInteract(InputAction.CallbackContext context)
@@ -73,7 +86,11 @@ namespace RPG.UI
             CurrentSelection = Mathf.Clamp(CurrentSelection, 0, Buttons.Count - 1);
 
             Buttons[CurrentSelection].AddToClassList(Constants.CLASS_MENU_ACTIVE);
+        }
 
+        private void HandleChangePlayerHealth(float newHealthPoints)
+        {
+            HealthLabel.text = newHealthPoints.ToString();
         }
     }
 }

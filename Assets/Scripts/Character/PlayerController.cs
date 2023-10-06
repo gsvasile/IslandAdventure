@@ -1,3 +1,4 @@
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Character
@@ -24,6 +25,8 @@ namespace RPG.Character
         {
             healthComponent.HealthPoints = Stats.Health;
             combatComponent.Damage = Stats.Damage;
+
+            EventManager.RaiseChangePlayerHealth(healthComponent.HealthPoints);
         }
     }
 }

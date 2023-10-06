@@ -15,6 +15,7 @@ namespace RPG.Utility
         public const string MENU_START_BUTTON_NAME = "start-button";
         public const string CLASS_MAIN_MENU_CONTAINER = "main-menu-container";
         public const string CLASS_PLAYER_INFO_CONTAINER = "player-info-container";
+        public const string LABEL_HEALTH_NAME = "health-label";
         #endregion UI
     }
 }
