@@ -12,22 +12,42 @@ namespace RPG.Utility
 
         private void OnStartAttack()
         {
-            OnBubbleStartAttack?.Invoke();
+            if (OnBubbleStartAttack == null)
+            {
+                return;
+            }
+
+            OnBubbleStartAttack.Invoke();
         }
 
         private void OnCompleteAttack()
         {
-            OnBubbleCompleteAttack?.Invoke();
+            if (OnBubbleCompleteAttack == null)
+            {
+                return;
+            }
+
+            OnBubbleCompleteAttack.Invoke();
         }
 
         private void OnHit()
         {
-            OnBubbleHit?.Invoke();
+            if (OnBubbleHit == null)
+            {
+                return;
+            }
+
+            OnBubbleHit.Invoke();
         }
 
         private void OnCompleteDefeat()
         {
-            OnBubbleCompleteDefeat?.Invoke();
+            if (OnBubbleCompleteDefeat == null)
+            {
+                return;
+            }
+
+            OnBubbleCompleteDefeat.Invoke();
         }
     }
 }
