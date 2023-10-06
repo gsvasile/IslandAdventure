@@ -7,7 +7,7 @@ namespace RPG.Character
 {
     public class Health : MonoBehaviour
     {
-        public event UnityAction OnStartDefeated;
+        public event UnityAction OnStartDefeated = () => { };
 
         private Animator animatorComponent;
         private BubbleEvent bubbleEventComponent;
@@ -61,7 +61,7 @@ namespace RPG.Character
 
             if (CompareTag(Constants.ENEMY_TAG))
             {
-                OnStartDefeated?.Invoke();
+                OnStartDefeated.Invoke();
             }
 
             animatorComponent.SetTrigger(Constants.ANIMATOR_PARAMETER_DEFEATED);
