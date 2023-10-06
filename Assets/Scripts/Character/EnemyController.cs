@@ -100,7 +100,6 @@ namespace RPG.Character
         private void HandleStartDefeated()
         {
             SwitchState(DefeatedState);
-            currentState.EnterState(this);
         }
     }
 }
