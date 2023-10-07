@@ -11,6 +11,13 @@ namespace RPG.Character
 
         public override void UpdateState(EnemyController enemy)
         {
+            if (enemy.Player == null)
+            {
+                enemy.CombatComponent.CancelAttack();
+                enemy.MovementComponent.StopMovingAgent();
+                return;
+            }
+
             if (enemy.DistanceFromPlayer > enemy.ChaseRange)
             {
                 enemy.SwitchState(enemy.ReturnState);

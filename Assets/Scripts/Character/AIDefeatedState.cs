@@ -7,7 +7,6 @@ namespace RPG.Character
 
         public override void EnterState(EnemyController enemy)
         {
-            Debug.Log("Defeated State Entered");
         }
 
         public override void UpdateState(EnemyController enemy) { }
