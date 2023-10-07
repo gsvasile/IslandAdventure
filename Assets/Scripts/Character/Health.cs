@@ -28,7 +28,10 @@ namespace RPG.Character
 
         private void Start()
         {
-            EventManager.RaiseChangePlayerPotionCount(potionCount);
+            if (CompareTag(Constants.PLAYER_TAG))
+            {
+                EventManager.RaiseChangePlayerPotionCount(potionCount);
+            }
         }
 
         private void OnEnable()
