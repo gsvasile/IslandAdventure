@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-
 namespace RPG.Character
 {
     public abstract class AIBaseState

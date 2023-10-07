@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 
 // RPG is the main namespace
 // for our game.

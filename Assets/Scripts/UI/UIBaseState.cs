@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace RPG.UI
 {
     public abstract class UIBaseState

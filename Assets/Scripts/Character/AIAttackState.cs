@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace RPG.Character
 {
     public class AIAttackState : AIBaseState
