@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: pauseDurationMaximum
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5324197342181245493, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
       propertyPath: m_Name
       value: Enemy Patrol Guard (2)
@@ -13874,6 +13882,14 @@ PrefabInstance:
       propertyPath: splineGameObject
       value: 
       objectReference: {fileID: 908488285}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5324197342181245493, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
       propertyPath: m_Name
       value: Enemy Patrol Guard (1)
@@ -15172,6 +15188,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1902665368}
     m_Modifications:
+    - target: {fileID: 2764129282607591646, guid: 478a45e56c43f054fa4b89596ccc5b4d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764129282607591646, guid: 478a45e56c43f054fa4b89596ccc5b4d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5226263137540992760, guid: 478a45e56c43f054fa4b89596ccc5b4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.067045
@@ -82445,6 +82469,14 @@ PrefabInstance:
     - target: {fileID: 1745650292297238508, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
       propertyPath: walkDurationMinimum
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2195850214887638316, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5324197342181245493, guid: d13a0f12e05761a49b892f2306b6962d, type: 3}
       propertyPath: m_Name

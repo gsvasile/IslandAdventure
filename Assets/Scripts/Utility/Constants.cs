@@ -8,6 +8,7 @@ namespace RPG.Utility
         public const string ENEMY_TAG = "Enemy";
         public const string ANIMATOR_PARAMETER_ATTACK = "attack";
         public const string ANIMATOR_PARAMETER_DEFEATED = "defeated";
+        public const string CAMERA_TAG = "MainCamera";
 
         #region UI
         public const string CLASS_MENU_BUTTON = "menu-button";

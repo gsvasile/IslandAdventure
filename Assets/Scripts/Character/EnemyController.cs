@@ -53,6 +53,12 @@ namespace RPG.Character
 
             healthComponent.HealthPoints = Stats.Health;
             CombatComponent.Damage = Stats.Damage;
+
+            if (healthComponent.sliderComponent != null)
+            {
+                healthComponent.sliderComponent.maxValue = Stats.Health;
+                healthComponent.sliderComponent.value = Stats.Health;
+            }
         }
 
         private void OnEnable()
@@ -84,6 +90,7 @@ namespace RPG.Character
             {
                 return;
             }
+
             Vector3 enemyPosition = transform.position;
             Vector3 playerPosition = Player.transform.position;
 

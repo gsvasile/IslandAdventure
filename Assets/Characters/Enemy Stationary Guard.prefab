@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Stationary Guard
       objectReference: {fileID: 0}
+    - target: {fileID: 7664331983769015641, guid: 8de8d1dc5425c0f488d0bb701276f880, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.674
+      objectReference: {fileID: 0}
     - target: {fileID: 8061612728030474134, guid: 8de8d1dc5425c0f488d0bb701276f880, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

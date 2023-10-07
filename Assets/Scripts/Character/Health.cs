@@ -3,6 +3,7 @@ using RPG.Utility;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace RPG.Character
 {
@@ -16,6 +17,7 @@ namespace RPG.Character
 
         private Animator animatorComponent;
         private BubbleEvent bubbleEventComponent;
+        public Slider sliderComponent { get; private set; }
 
         private bool isDefeated = false;
 
@@ -24,6 +26,7 @@ namespace RPG.Character
         {
             animatorComponent = GetComponentInChildren<Animator>();
             bubbleEventComponent = GetComponentInChildren<BubbleEvent>();
+            sliderComponent = GetComponentInChildren<Slider>();
         }
 
         private void Start()
@@ -56,6 +59,11 @@ namespace RPG.Character
             if (CompareTag(Constants.PLAYER_TAG))
             {
                 EventManager.RaiseChangePlayerHealth(HealthPoints);
+            }
+
+            if (sliderComponent != null)
+            {
+                sliderComponent.value = HealthPoints;
             }
 
             if (HealthPoints == 0)
