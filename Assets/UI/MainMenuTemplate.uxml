@@ -18,7 +18,7 @@
         </ui:VisualElement>
         <ui:VisualElement class="stat-container">
             <ui:Label tabindex="-1" text="Potions" parse-escape-sequences="true" display-tooltip-when-elided="true" class="stat-name" />
-            <ui:Label tabindex="-1" text="000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="postions-label" class="stat-value" />
+            <ui:Label tabindex="-1" text="000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="potions-label" class="stat-value" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
