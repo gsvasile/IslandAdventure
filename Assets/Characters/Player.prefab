@@ -586,6 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d83250662f17e41b1abd0cf0e6fe7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potionCount: 1
+  healAmount: 15
 --- !u!65 &6080575960025173144
 BoxCollider:
   m_ObjectHideFlags: 0
