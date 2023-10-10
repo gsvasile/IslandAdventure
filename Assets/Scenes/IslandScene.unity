@@ -17049,6 +17049,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8675390925355739074, guid: be84eacb4ad15b24ea6b68d6ecba478a, type: 3}
   m_PrefabInstance: {fileID: 429227861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &431268264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5061428117719415408, guid: 6765260f3c591ac43a436a3d6d9a85d9, type: 3}
+  m_PrefabInstance: {fileID: 1468840147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cf31b2dab103c4eb63b469b1209c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &436223729
 Mesh:
   m_ObjectHideFlags: 0
@@ -83868,7 +83879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
@@ -83884,6 +83895,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
@@ -83903,6 +83918,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 681067700}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 431268264}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4709962088494519061}
@@ -83916,6 +83935,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
@@ -83935,6 +83958,10 @@ PrefabInstance:
       value: HandleInteract
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HandleInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HandleAttack
       objectReference: {fileID: 0}
@@ -83951,6 +83978,10 @@ PrefabInstance:
       value: RPG.Quest.TreasureChest, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RPG.Character.NPCController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: RPG.Character.Combat, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -83964,6 +83995,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3333858173597988646, guid: 2ac0f7fae34af8e4881317cc837fffec, type: 3}

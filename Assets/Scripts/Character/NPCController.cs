@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace RPG.Character
 {
@@ -21,9 +22,14 @@ namespace RPG.Character
             canvasComponent.enabled = false;
         }
 
-        // public void HandleInteract(InputAction.CallbackContext context)
-        // {
+        public void HandleInteract(InputAction.CallbackContext context)
+        {
+            if (!context.performed || !canvasComponent.enabled)
+            {
+                return;
+            }
 
-        // }
+            print("talking with the NPC");
+        }
     }
 }
