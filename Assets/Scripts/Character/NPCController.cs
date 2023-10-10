@@ -7,6 +7,8 @@ namespace RPG.Character
     {
         private Canvas canvasComponent;
 
+        [field: SerializeField] public TextAsset InkJSON { get; private set; }
+
         private void Awake()
         {
             canvasComponent = GetComponentInChildren<Canvas>();
@@ -26,6 +28,12 @@ namespace RPG.Character
         {
             if (!context.performed || !canvasComponent.enabled)
             {
+                return;
+            }
+
+            if (InkJSON == null)
+            {
+                Debug.LogWarning("Please add an ink file to the npc.");
                 return;
             }
 
