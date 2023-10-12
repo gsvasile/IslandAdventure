@@ -984,3 +984,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cf31b2dab103c4eb63b469b1209c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <InkJSON>k__BackingField: {fileID: 4900000, guid: 2532d8a3600db9f41a054f7ec109e90b, type: 3}

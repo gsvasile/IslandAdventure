@@ -20,6 +20,7 @@ namespace RPG.UI
 
         public UIBaseState CurrentState { get; set; }
         public UIMainMenuState MainMenuState { get; private set; }
+        public UIDialogueState DialogueState { get; private set; }
 
         public int CurrentSelection { get; set; }
 
@@ -34,12 +35,14 @@ namespace RPG.UI
             PotionCountLabel = PlayerInfoContainer.Q<Label>(Constants.LABEL_POTIONS_NAME);
 
             MainMenuState = new UIMainMenuState(this);
+            DialogueState = new UIDialogueState(this);
         }
 
         private void OnEnable()
         {
             EventManager.OnChangePlayerHealth += HandleChangePlayerHealth;
             EventManager.OnChangePlayerPotionCount += HandleChangePlayerPotionCount;
+            EventManager.OnInitiateDialogue += HandleInitiateDialogue;
         }
 
         // Start is called before the first frame update
@@ -62,6 +65,7 @@ namespace RPG.UI
         {
             EventManager.OnChangePlayerHealth -= HandleChangePlayerHealth;
             EventManager.OnChangePlayerPotionCount -= HandleChangePlayerPotionCount;
+            EventManager.OnInitiateDialogue -= HandleInitiateDialogue;
         }
 
         public void HandleInteract(InputAction.CallbackContext context)
@@ -99,6 +103,12 @@ namespace RPG.UI
         private void HandleChangePlayerPotionCount(int newPotionCount)
         {
             PotionCountLabel.text = newPotionCount.ToString();
+        }
+
+        private void HandleInitiateDialogue(TextAsset inkJSON)
+        {
+            CurrentState = DialogueState;
+            CurrentState.EnterState();
         }
     }
 }
