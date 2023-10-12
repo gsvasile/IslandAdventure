@@ -1,4 +1,6 @@
+using UnityEngine;
 using UnityEngine.UIElements;
+using Ink.Runtime;
 
 namespace RPG.UI
 {
@@ -8,6 +10,7 @@ namespace RPG.UI
         private Label dialogueText;
         private VisualElement nextButton;
         private VisualElement choicesGroup;
+        private Story currentStory;
 
         public UIDialogueState(UIController ui) : base(ui) { }
 
@@ -22,5 +25,16 @@ namespace RPG.UI
         }
 
         public override void SelectButton() { }
+
+        public void SetStory(TextAsset inkJSON)
+        {
+            currentStory = new Story(inkJSON.text);
+            UpdateDialogue();
+        }
+
+        public void UpdateDialogue()
+        {
+            dialogueText.text = currentStory.Continue();
+        }
     }
 }
