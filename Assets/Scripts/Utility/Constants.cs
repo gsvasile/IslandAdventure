@@ -9,6 +9,9 @@ namespace RPG.Utility
         public const string ANIMATOR_PARAMETER_ATTACK = "attack";
         public const string ANIMATOR_PARAMETER_DEFEATED = "defeated";
         public const string CAMERA_TAG = "MainCamera";
+        public const string GAME_MANAGER_TAG = "GameManager";
+        public const string GAMEPLAY_ACTION_MAP = "Gameplay";
+        public const string UI_ACTION_MAP = "UI";
 
         #region UI
         public const string CLASS_MENU_BUTTON = "menu-button";
