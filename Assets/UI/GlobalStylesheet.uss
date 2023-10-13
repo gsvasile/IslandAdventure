@@ -1,5 +1,5 @@
 .primary-container {
-    background-color: rgb(253, 185, 118);
+    background-color: rgb(255, 227, 198);
     border-left-color: rgba(4, 74, 101, 0);
     border-right-color: rgba(4, 74, 101, 0);
     border-top-color: rgba(4, 74, 101, 0);

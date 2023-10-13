@@ -4,10 +4,10 @@
 Straight check this out, yo...
 A long time ago, a couple of orcs stole my candy. 
 Like wt t f!? I want that candy. I NEED it.
-Did you find it? Or did you at least go look for, and find it?
-    * [Sure, I had nothing better to do than wander all over.]
+Did you happen to find it??
+    * [Sure, Why the fuck not!?]
         -> success
-    * ["blah blah blah I so lazy, candy, blah blah blah"]
+    * [Uhh..no?]
         -> noCandy
 -> END
 

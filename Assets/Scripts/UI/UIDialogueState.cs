@@ -3,6 +3,8 @@ using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Ink.Runtime;
 using RPG.Utility;
+using System.Collections.Generic;
+using System;
 
 namespace RPG.UI
 {
@@ -14,6 +16,8 @@ namespace RPG.UI
         private VisualElement choicesGroup;
         private Story currentStory;
         private PlayerInput playerInputComponent;
+
+        private bool hasChoices = false;
 
         public UIDialogueState(UIController ui) : base(ui) { }
 
@@ -45,6 +49,40 @@ namespace RPG.UI
         public void UpdateDialogue()
         {
             dialogueText.text = currentStory.Continue();
+
+            hasChoices = currentStory.currentChoices.Count > 0;
+
+            if (hasChoices)
+            {
+                HandleNewChoices(currentStory.currentChoices);
+            }
+            else
+            {
+                nextButton.style.display = DisplayStyle.Flex;
+                choicesGroup.style.display = DisplayStyle.None;
+            }
+        }
+
+        private void HandleNewChoices(List<Choice> choices)
+        {
+            nextButton.style.display = DisplayStyle.None;
+            choicesGroup.style.display = DisplayStyle.Flex;
+
+            choicesGroup.Clear();
+            Controller.Buttons?.Clear();
+
+            choices.ForEach(CreateNewChoiceButton);
+        }
+
+        private void CreateNewChoiceButton(Choice choice)
+        {
+            Button choiceButton = new Button();
+
+            choiceButton.AddToClassList("menu-button");
+            choiceButton.text = choice.text;
+            choiceButton.style.marginRight = 20;
+
+            choicesGroup.Add(choiceButton);
         }
     }
 }
