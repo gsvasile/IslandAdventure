@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 using Ink.Runtime;
 using RPG.Utility;
 using System.Collections.Generic;
-using System;
 
 namespace RPG.UI
 {
@@ -72,13 +71,16 @@ namespace RPG.UI
             Controller.Buttons?.Clear();
 
             choices.ForEach(CreateNewChoiceButton);
+
+            Controller.Buttons = choicesGroup.Query<Button>().ToList();
+            Controller.Buttons[0].AddToClassList(Constants.CLASS_MENU_ACTIVE);
         }
 
         private void CreateNewChoiceButton(Choice choice)
         {
             Button choiceButton = new Button();
 
-            choiceButton.AddToClassList("menu-button");
+            choiceButton.AddToClassList(Constants.CLASS_MENU_BUTTON);
             choiceButton.text = choice.text;
             choiceButton.style.marginRight = 20;
 
