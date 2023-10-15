@@ -21,6 +21,8 @@ namespace RPG.Utility
         public const string CLASS_PLAYER_INFO_CONTAINER = "player-info-container";
         public const string LABEL_HEALTH_NAME = "health-label";
         public const string LABEL_POTIONS_NAME = "potions-label";
+
+        public const int DEFAULT_BUTTON_LIST_CAPACITY = 2;
         #endregion UI
     }
 }
