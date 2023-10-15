@@ -12,7 +12,7 @@ namespace RPG.UI
     {
         private UIDocument uiDocumentComponent;
         public VisualElement Root { get; private set; }
-        public List<Button> Buttons { get; set; }
+        public List<Button> Buttons { get; set; } = new List<Button>(Constants.DEFAULT_BUTTON_LIST_CAPACITY);
         public VisualElement MainMenuContainer { get; private set; }
         public VisualElement PlayerInfoContainer { get; private set; }
         public Label HealthLabel { get; private set; }

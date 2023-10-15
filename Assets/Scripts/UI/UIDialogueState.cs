@@ -52,6 +52,12 @@ namespace RPG.UI
                 currentStory.ChooseChoiceIndex(Controller.CurrentSelection);
             }
 
+            if (!currentStory.canContinue)
+            {
+                ExitDialogue();
+                return;
+            }
+
             dialogueText.text = currentStory.Continue();
 
             hasChoices = currentStory.currentChoices.Count > 0;
@@ -79,6 +85,8 @@ namespace RPG.UI
 
             Controller.Buttons = choicesGroup.Query<Button>().ToList();
             Controller.Buttons[0].AddToClassList(Constants.CLASS_MENU_ACTIVE);
+
+            Controller.CurrentSelection = 0;
         }
 
         private void CreateNewChoiceButton(Choice choice)
