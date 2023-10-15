@@ -47,6 +47,11 @@ namespace RPG.UI
 
         public void UpdateDialogue()
         {
+            if (hasChoices)
+            {
+                currentStory.ChooseChoiceIndex(Controller.CurrentSelection);
+            }
+
             dialogueText.text = currentStory.Continue();
 
             hasChoices = currentStory.currentChoices.Count > 0;
@@ -85,6 +90,12 @@ namespace RPG.UI
             choiceButton.style.marginRight = 20;
 
             choicesGroup.Add(choiceButton);
+        }
+
+        private void ExitDialogue()
+        {
+            dialogueContainer.style.display = DisplayStyle.None;
+            playerInputComponent.SwitchCurrentActionMap(Constants.GAMEPLAY_ACTION_MAP);
         }
     }
 }
