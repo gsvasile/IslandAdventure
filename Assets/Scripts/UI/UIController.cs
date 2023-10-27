@@ -21,6 +21,7 @@ namespace RPG.UI
         public UIBaseState CurrentState { get; set; }
         public UIMainMenuState MainMenuState { get; private set; }
         public UIDialogueState DialogueState { get; private set; }
+        public UIQuestItemState QuestItemState { get; private set; }
 
         public int CurrentSelection { get; set; }
 
@@ -36,6 +37,7 @@ namespace RPG.UI
 
             MainMenuState = new UIMainMenuState(this);
             DialogueState = new UIDialogueState(this);
+            QuestItemState = new UIQuestItemState(this);
         }
 
         private void OnEnable()
